@@ -1,0 +1,17 @@
+{
+	"name": "SQL addalter script",
+	"properties": {
+		"content": {
+			"query": "CREATE TABLE dbo.Orders_Staging   \n(OrderID int IDENTITY(1,1) NOT NULL   \n,OrderDate datetime NOT NULL   \n,OrderDescription char(15) DEFAULT 'NewOrder'   ) \nALTER TABLE dbo.OrdersPartition SWITCH PARTITION 3 \nto dbo.Orders_Staging ",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "tanusqlspool25",
+				"poolName": "tanusqlspool25"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}
